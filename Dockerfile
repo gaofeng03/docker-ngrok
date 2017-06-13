@@ -17,7 +17,6 @@ ENV NGROK_HTTPS_ADDR 443
 WORKDIR /root
 RUN git clone https://github.com/inconshreveable/ngrok.git
 # 2. cert
-RUN ls
 WORKDIR /root/ngrok
 RUN mkdir cert
 WORKDIR /root/ngrok/cert
