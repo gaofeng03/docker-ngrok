@@ -1,7 +1,7 @@
 ngrok:
   build: ./
   restart: always
-  command: sh /root/ngrok/bin/ngrokd -domain="$NGROK_HOST" -httpAddr=":$NGROK_HTTP_ADDR" -httpsAddr=":$NGROK_HTTPS_ADDR"
+  command: /root/ngrok/bin/ngrokd -domain="$NGROK_HOST" -httpAddr=":$NGROK_HTTP_ADDR" -httpsAddr=":$NGROK_HTTPS_ADDR"
   environment:
     NGROK_HOST: monogogo.cn
     NGROK_HTTP_ADDR: 80
