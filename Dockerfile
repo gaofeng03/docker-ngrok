@@ -17,5 +17,11 @@ ENV NGROK_HTTPS_ADDR 443
 WORKDIR /root
 RUN git clone https://github.com/inconshreveable/ngrok.git
 ADD ngrok.sh ./
+RUN mkdir /usr/ngrok
+RUN mkdir /usr/ngrok/sh
+ADD ngrok.cfg /usr/ngrok/
+ADD ngrok-ssh.sh /usr/ngrok/
+ADD start.sh /usr/ngrok/
+ADD ngrok /usr/ngrok/sh/
 # run
 # /root/ngrok.sh

@@ -1,0 +1,1 @@
+/root/ngrok/ngrok -config=/root/ngrok/ngrok.cfg start ssh web

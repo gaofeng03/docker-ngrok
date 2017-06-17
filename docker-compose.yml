@@ -1,11 +1,23 @@
-ngrok:
-  build: ./
+docker-ngrok:
+  # image: daocloud.io/gaofeng0300/ngrok:latest
+  command: bash /root/ngrok.sh
+  privileged: false
   restart: always
-  command: /root/ngrok/bin/ngrokd -domain="$NGROK_HOST" -httpAddr=":$NGROK_HTTP_ADDR" -httpsAddr=":$NGROK_HTTPS_ADDR"
-  environment:
-    NGROK_HOST: monogogo.cn
-    NGROK_HTTP_ADDR: 80
-    NGROK_HTTPS_ADDR: 443
   ports:
-    - 80:80
-    - 443:443
+  - 80:80
+  - 443:443
+  - 4443:4443
+  - 50000:50000
+  - 50001:50001
+  - 50002:50002
+  - 50003:50003
+  - 50004:50004
+  - 50005:50005
+  - 50006:50006
+  - 50007:50007
+  - 50008:50008
+  - 50009:50009
+  environment:
+  - NGROK_HOST=monogogo.cn
+  - NGROK_HTTP_ADDR=80
+  - NGROK_HTTPS_ADDR=443
