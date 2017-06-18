@@ -1,5 +1,5 @@
 ngrok:
-  image: daocloud.io/gaofeng0300/ngrok:master
+  image: daocloud.io/gaofeng0300/ngrok:latest
   command: bash /root/ngrok.sh
   privileged: false
   restart: always
@@ -21,4 +21,4 @@ ngrok:
   environment:
   - NGROK_HTTP_ADDR=80
   - NGROK_HTTPS_ADDR=443
-  - NGROK_HOST=monogogo.cn
+  - NGROK_HOST=tunnel.monogogo.cn
