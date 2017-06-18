@@ -1,12 +1,10 @@
 ngrok:
-  # image: daocloud.io/gaofeng0300/ngrok:latest
+  image: daocloud.io/gaofeng0300/ngrok:latest
   command: bash /root/ngrok.sh
   privileged: false
   restart: always
-  volumes:
-  - /usr/ngrok:/usr/ngrok
   ports:
-  - 80:80
+  - 8000:8000
   - 443:443
   - 4443:4443
   - 50000:50000
@@ -20,6 +18,6 @@ ngrok:
   - 50008:50008
   - 50009:50009
   environment:
-  - NGROK_HOST=monogogo.cn
-  - NGROK_HTTP_ADDR=80
   - NGROK_HTTPS_ADDR=443
+  - NGROK_HOST=monogogo.cn:8000
+  - NGROK_HTTP_ADDR=8000
