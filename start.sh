@@ -12,4 +12,4 @@ sudo update-rc.d ngrok defaults 90
 # 测试服务是否能启动成功
 service ngrok start
 # 检查自启动的服务
-chkconfig
+# chkconfig
