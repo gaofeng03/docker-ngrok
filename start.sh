@@ -1,5 +1,5 @@
 # 复制文件
-cp /usr/ngrok /root/
+cp -rf /usr/ngrok /root/
 # 更改文件权限
 chmod 755 ngrok-ssh.sh
 # 开机启动

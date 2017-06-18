@@ -1,8 +1,10 @@
-docker-ngrok:
+ngrok:
   # image: daocloud.io/gaofeng0300/ngrok:latest
   command: bash /root/ngrok.sh
   privileged: false
   restart: always
+  volumes:
+  - /usr/ngrok:/usr/ngrok
   ports:
   - 80:80
   - 443:443
