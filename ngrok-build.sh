@@ -17,4 +17,4 @@ cd /root/ngrok
 make release-server release-client
 cp /root/ngrok/bin/ngrok /usr/ngrok
 # 5. run
-/root/ngrok/bin/ngrokd -domain="$NGROK_HOST" -httpAddr=":$NGROK_HTTP_ADDR" -httpsAddr=":$NGROK_HTTPS_ADDR"
+# /root/ngrok/bin/ngrokd -domain="$NGROK_HOST" -httpAddr=":$NGROK_HTTP_ADDR" -httpsAddr=":$NGROK_HTTPS_ADDR"
