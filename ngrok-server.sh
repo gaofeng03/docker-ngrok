@@ -17,7 +17,8 @@ function build {
 
 # 守护进程
 function watchdog {
-    bash /root/watchdog.sh /root/watchdog-server.txt
+    # bash /root/watchdog.sh /root/watchdog-server.txt
+    echo "watchdog"
 }
 
 # ngrokd 是否存在
