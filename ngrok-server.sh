@@ -5,7 +5,7 @@ ngrokd_pid="`ps -ef | grep -v grep | grep ngrokd | sed -n  '1P' | awk '{print $2
 
 #start ngrokd server
 function start {
-    bash /root/ngrok/bin/ngrokd -domain="$NGROK_HOST" -httpAddr=":$NGROK_HTTP_ADDR" -httpsAddr=":$NGROK_HTTPS_ADDR"
+    /root/ngrok/bin/ngrokd -domain="$NGROK_HOST" -httpAddr=":$NGROK_HTTP_ADDR" -httpsAddr=":$NGROK_HTTPS_ADDR"
     echo "ngrokd start"
 }
 
