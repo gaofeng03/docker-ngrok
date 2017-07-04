@@ -23,7 +23,7 @@ function watchdog {
 
 # ngrokd 是否存在
 if [ ! -e "$ngrokd_file" ] ; then
-    echo "no ngrokd"
+    echo "ngrokd dosen‘t exist"
     build
     start
     watchdog
@@ -31,4 +31,6 @@ elif [ -z "$ngrokd_pid" ] ; then
     echo "no this process"
     start
     watchdog
+else 
+    echo "server is running"
 fi
