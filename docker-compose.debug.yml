@@ -1,11 +1,24 @@
-version: '1.0'
-
-services:
-  docker:
-    image: docker
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - 80:80
-      - 443:443
+ngrok:
+  image: daocloud.io/gaofeng0300/ngrok:latest
+  command: bash /root/ngrok-server.sh
+  privileged: false
+  restart: always
+  ports:
+  - 8088:8088
+  - 8089:8089
+  - 4443:4443
+  - 50000:50000
+  - 50001:50001
+  - 50002:50002
+  - 50003:50003
+  - 50004:50004
+  - 50005:50005
+  - 50006:50006
+  - 50007:50007
+  - 50008:50008
+  - 50009:50009
+  - 50010:50010
+  environment:
+  - NGROK_HTTP_ADDR=8088
+  - NGROK_HTTPS_ADDR=8089
+  - NGROK_HOST=tunnel.monogogo.cn
