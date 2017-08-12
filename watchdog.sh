@@ -5,11 +5,25 @@
 declare -A mapper
 #进程号文件
 conf=dog.pid
-
+url=127.0.0.1:4040
+anetKeepAlive=5 #秒
 
 function debug
 {
     echo $@
+}
+
+#heartbeat
+function heartbeat
+{
+    code=`curl -o /dev/null --retry 3 --retry-max-time 8 -s -w %{http_code} $url`
+    echo "$url status $code">>heartbeat.log
+    if test $[code] -eq 200;
+    then
+        echo "$url status $code";
+    else
+        #todo gf
+    fi
 }
 
 #param pid 进程号
@@ -32,7 +46,7 @@ function dogit
 {
     while [ 1 ]
     do
-        sleep 5
+        sleep $anetKeepAlive
         for pid in ${!mapper[@]}
         do
             debug pid:$pid
