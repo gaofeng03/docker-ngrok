@@ -10,12 +10,33 @@
 
 
 ngrok_path=/root/ngrok
+start()
+{
+        echo "start ngrok ssh service.."
+        pkill ngrok
+        sh ${ngrok_path}/ngrok-ssh.sh
+        exit 0;
+}
+stop()
+{
+        pkill ngrok
+        echo "stop ngrok service..."
+}
 case "$1" in
         start)
-                echo "start ngrok ssh service.."
-                sh ${ngrok_path}/ngrok-ssh.sh
+                start   
+                ;;
+        stop)
+                stop
+                ;;
+        restart|reload)
+                stop
+                start
                 ;;
         *)
-        exit 1
+        echo "Usage: $0 {start|stop|restart|reload}"
+        exit 0
         ;;
 esac
+
+exit 0

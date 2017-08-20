@@ -1,1 +1,0 @@
-/root/ngrok/bin/ngrokd -domain="tunnel.monogogo.cn" -httpAddr="8088" -httpsAddr="8089"
