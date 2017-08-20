@@ -24,7 +24,8 @@ ADD ngrok-build.sh ./
 ADD ngrok-server.sh ./
 
 # watch server
-ADD watchdog.sh ./
+# ADD watchdog.sh ./
+# ADD watchdog-server.txt /usr/ngrok/
 
 # 2、creat ngrok dir
 RUN mkdir /usr/ngrok
@@ -35,9 +36,9 @@ ADD ngrok.cfg /usr/ngrok/
 ADD ngrok-ssh.sh /usr/ngrok/
 ADD ngrok-client.sh /usr/ngrok/
 
-# watch client file
+# watch client
 ADD watchdog.sh /usr/ngrok/
-ADD watchdog-client.txt /usr/ngrok/
+# ADD watchdog-client.txt /usr/ngrok/
 
 # service
 ADD ngrok /usr/ngrok/sh/
